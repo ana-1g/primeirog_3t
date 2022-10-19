@@ -1,29 +1,49 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeiro G</title>
-    <script src="estudo.js"></script>
-</head>
-<body>
+function total(){
+  let c = document.getElementById("capital").value;
+  let j = document.getElementById("juros").value;
+  let t = document.getElementById("meses").value;
+  let m = 0;
+  for(let i = 1; i <= t; i++){
+      m = c * (1 + (j/100));
+      document.write("Valor no mês " + i + " = "+ m + "<br>");
+      c = m;
+  }
+  document.write("Montante: " + m)
+}
 
-    Capital: <input id="capital" type="text"><br>
-    Juros mensais: <input id="juros" type="text"><br>
-    Quantidade de meses: <input id="meses" type="text"><br>
-    <button onclick="total()">Calcular</button>
+function soma(){
+  let val1 = document.getElementById("v1").value;
+  let val2 = document.getElementById("v2").value;
+  let r = Number(val1) + Number(val2);
+  document.getElementById("resultado").innerHTML = r;
+  
+}
 
-    <br><br><br>
-    <span id="resultado"><span><br><br>
-    Valor 1: <input id="v1" type"text"><br>
-    Valor 2: <input id="v2" type"text"><br>
-      <button onclick="soma()">Soma</button>
-      <button onclick="subtracao()">Subtração</button>
-      <button onclick="divisao()">Divisão</button>
-      <button onclick="multiplicacao()">Multiplicação</button>
-      <button onclick="porcentagem()">Porcentagem</button>
+function subtracao(){
+  let val1 = document.getElementById("v1").value;
+  let val2 = document.getElementById("v2").value;
+  let r = Number(val1) - Number(val2);
+  document.getElementById("resultado").innerHTML =r;
+  }
 
-</body>
-</html>
-
+  function divisao(){
+    let val1 = document.getElementById("v1").value;
+    let val2 = document.getElementById("v2").value;
+    let r = Number(val1) / Number(val2);
+    document.getElementById("resultado").innerHTML =r;
+    }
+  
+    function multiplicacao(){
+      let val1 = document.getElementById("v1").value;
+      let val2 = document.getElementById("v2").value;
+      let r = Number(val1) * Number(val2);
+      document.getElementById("resultado").innerHTML =r;
+      }
+      function porcentagem(){
+        let val1 = document.getElementById("v1").value;
+        let val2 = document.getElementById("v2").value;
+        let c = 100
+        let p = Number(val2)  / Number(c)
+        let r = Number(val1) * Number(p);
+        document.getElementById("resultado").innerHTML =r;
+        } 
